@@ -1,0 +1,13 @@
+<h1 class="title"><strong> {{title}} </strong></h1>
+
+  <div class="chart">
+    <canvas baseChart
+            [datasets]="chart_Data"
+            [labels]="chart_Labels"
+            [options]="chart_Options"
+            [plugins]="chart_Plugins"
+            [legend]="chart_Legend"
+            [chartType]="chart_Type">
+    </canvas>
+  </div>
+

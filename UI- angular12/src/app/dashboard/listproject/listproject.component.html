@@ -1,0 +1,44 @@
+<app-sidebar></app-sidebar>
+
+<div class="container">
+        <h3 class="d-flex bd-highlight bg-primary p-3 ml-5 text-white justify-content-center mt-2 mb-3">PROJECT LIST</h3>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Project Name</th>
+            <th>Reason</th> 
+            <th>Type</th> 
+            <th>Division</th>
+            <th>Category</th>
+            <th>Priority</th> 
+            <th>Department</th> 
+            <th>Location</th> 
+            <th>Status</th>  
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataItem of ProjectList">
+            <td> {{dataItem.projectName}} <br>
+                <p style="font-size: 11px; color:grey(204, 195, 195); margin-top: 4px; font-style:oblique ;">
+                    {{dataItem.startDate}} to {{dataItem.endDate}}
+                </p>
+            </td>
+            <td> {{dataItem.reason}} </td>
+            <td> {{dataItem.type}} </td>
+            <td> {{dataItem.division}} </td>
+            <td> {{dataItem.category}} </td>
+            <td> {{dataItem.priority}} </td>
+            <td> {{dataItem.department}} </td>
+            <td> {{dataItem.location}} </td>
+            <td> {{dataItem.status}} </td>
+            <td>
+                <button class="btn col-3.7 btn-sm btn-success" name="status" type="submit" (click)="onSuccess({projectId: dataItem.projectId,status: 'Start'})">Start</button>
+                <button class="btn col-3.7 btn-sm btn-success" name="status" type="submit" (click)="onSuccess({projectId: dataItem.projectId,status: 'Close'})">Close</button>
+                <button class="btn col-3.7 btn-sm btn-success" name="status" type="submit" (click)="onSuccess({projectId: dataItem.projectId,status: 'Cancel'})">Cancel</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,12 @@
+.table{
+    margin-left: 60px;
+    padding-left: 160px;
+}
+
+.table, thead{
+    padding: 2px;
+}
+
+.btn{
+    margin: 2px;
+}

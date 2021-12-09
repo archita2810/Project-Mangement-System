@@ -1,0 +1,86 @@
+<app-sidebar></app-sidebar>
+
+<div  *ngIf="addProject" class="container">
+    <form  #PostProject="ngForm" [formGroup]="addProject" (ngSubmit)="onSubmit(PostProject.value)">
+        
+        <div class="row mb-3 mt-3 pt-3 ml-2">
+            <label for="projectName" class="col-sm-1 col-form-label col-form-label-lg">Project Name</label>
+               <div class="col-sm-8">
+                    <textarea cols="20" name="projectName" class="form-control form-control-lg" id="projectName" placeholder='Project Name' formControlName="projectName"></textarea>
+                    <span class="error" *ngIf="projectName && projectName.invalid && projectName.touched">This field is required</span>
+                </div>
+        </div>
+    
+        <br>
+        <div id="dropdown" class="mb-3 pt-3 ml-5">
+        <label for="Reason" class="pr-2 mt-1">Reason</label>
+            <select formControlName="reason">
+                <option disabled>Choose</option>
+                <option *ngFor="let item of reasonList"> {{item}} </option>
+            </select>
+    
+            <label for="Type" class="pr-2 mt-1 pl-5">Type</label>
+                <select formControlName="type">
+                    <option disabled>Choose</option>
+                    <option *ngFor="let item of typeList"> {{item}} </option>
+                </select>
+    
+            <label for="Division" class="pr-2 mt-1 pl-5">Division</label>
+                <select formControlName="division">
+                    <option disabled>Choose</option>
+                    <option *ngFor="let item of divisionList"> {{item}} </option>    
+                </select>
+
+
+            <label for="Category" class="pr-2 mt-1 ml-5">Category</label>
+                <select formControlName="category">
+                    <option disabled>Choose</option>
+                    <option *ngFor="let item of categoryList"> {{item}} </option>    
+            </select>
+            </div>
+    
+            <br>
+        <div id="dropdown" class="mb-3 pt-2 ml-5">
+    
+            <label for="Priority" class="pr-2 mt-1">Priority</label>
+                <select formControlName="priority">
+                    <option disabled>Choose</option>
+                    <option *ngFor="let item of priorityList"> {{item}} </option>    
+                </select>
+    
+
+            <label for="Department" class="pr-2 mt-1 pl-5">Department</label>
+                <select formControlName="department">
+                    <option disabled>Choose</option>
+                    <option *ngFor="let item of departmentList"> {{item}} </option>    
+                </select>
+    
+                <label for="Location" class="pr-2 mt-1 pl-5">Location</label>
+                 <select formControlName="location">
+                    <option disabled>Choose</option>
+                    <option *ngFor="let item of locationList"> {{item}} </option>
+                </select>
+            </div>
+    
+            <br>
+            <div id="dropdown" class="mb-3 ml-5 pt-2">
+    
+                <label class="pr-1">Start Date</label>
+                    <input type="date" name="startDate" formControlName="startDate">
+    
+                <label class="pl-5 pr-1">End Date</label>
+                    <input type="date" name="endDate" formControlName="endDate">  
+    
+                <label class="pl-5 pr-2">Status:</label>
+                <label name="status"><strong>{{ addProject?.value?.status }}</strong></label>    
+            </div>
+    
+            <br><br>
+            <div class="mx-auto col-4">
+                <button type="submit" class="m-1 btn btn-primary text-light btn-outline-dark">
+                    Save Project
+                </button>
+            </div>
+    
+    </form>
+</div>

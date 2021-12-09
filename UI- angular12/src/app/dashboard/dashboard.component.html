@@ -1,0 +1,47 @@
+
+
+<app-sidebar></app-sidebar>
+
+<div class="alert alert-info" role="alert">
+    <h1 class="d-flex flex-row justify-content-start align-items-center m-1 pl-3">DASHBOARD</h1>
+</div>
+
+
+ <br>
+
+<div class ="container-fluid px-4">
+
+    <div class="row g-3 my-2 mt-2">
+        <div class="col-md-2">
+            <div class="p-2 pl-3 pr-3 pt-3 shadow-sm bg-grey d-flex btn-primary justify-content-around align-items-center rounded">
+                <div>
+                   <h2>{{register}}:&nbsp;&nbsp;{{statusRegister}}</h2>
+                </div>
+            </div>
+        </div>
+         <div class="col-md-2">
+            <div class="p-2 pt-3 shadow-sm bg-grey d-flex btn-primary justify-content-around align-items-center rounded">
+               <div>
+                <h2>{{start}}:&nbsp;&nbsp;{{statusStart}}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="p-2 pt-3 shadow-sm bg-grey d-flex btn-primary justify-content-around align-items-center rounded">
+               <div>
+                <h2>{{close}}:&nbsp;&nbsp;{{statusClose}}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="p-2 pt-3 shadow-sm bg-grey d-flex btn-primary justify-content-around align-items-center rounded">
+               <div>
+                <h2>{{cancel}}:&nbsp;&nbsp;{{statusCancel}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-graph></app-graph>
+
